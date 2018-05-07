@@ -22,6 +22,14 @@ public class Main {
 
     private static final String PONTO_VIRGULA = ";";
 
+    /**
+     * Formata decimais para o formato apresentado nos .csv
+     *
+     * Permite a conversao para formato com virgulas.
+     *
+     * @param str
+     * @return
+     */
     private static Number formataDecimais(String str) {
         DecimalFormat df = new DecimalFormat("#,00", DecimalFormatSymbols.getInstance(Locale.US));
         Number num = null;
@@ -70,8 +78,6 @@ public class Main {
     }
 
     private static String geraRelatorioCompra(final String separador, List<Cliente> clientes) {
-//        <id_cliente;valor_total_compra>
-//        < id_cliente;id_item;tipo;quantidade;custo;valor_com_desconto>
         String relatorio = "";
         for (Cliente cliente : clientes) {
             Carrinho carrinho = cliente.getCarrinho();
@@ -92,8 +98,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//        System.out.println(System.getProperty("user.dir"));
-
         List<Produto> brinquedos = new ArrayList<>();
         List<Produto> livros = new ArrayList<>();
         List<Produto> presentes = new ArrayList<>();
@@ -101,16 +105,24 @@ public class Main {
         //TODO aplicar padrao Chain of Responsability na leitura dos arquivos
         //TODO aplicar Singleton na Main
 
-        //brinquedos.csv, livros.csv, presentes.csv, clientes.csv e
-        //compras.csv
-
+        /**
+         * 4.
+         * Ao iniciar o programa, deve ser efetuada a leitura dos arquivos de entrada e o cálculo do valor
+         * total a ser pago por cada cliente. Os arquivos de entrada estão no formato CSV, separados por ponto e
+         * vírgula. Devem ser lidos os arquivos: brinquedos.csv, livros.csv, presentes.csv, clientes.csv e
+         * compras.csv.
+         */
         String nomeArqIn;
         try {
             BufferedReader br;
             int n;
 
+            /**
+             * brinquedos.csv
+             * n
+             * <id;nome;custo;fabricante;idade_minima>
+             */
             nomeArqIn = "brinquedos.csv";
-            //<id;nome;custo;fabricante;idade_minima>
             br = new BufferedReader(new FileReader(nomeArqIn));
             n = Integer.valueOf(br.readLine());
             for (int i=0; i<n; i++) {
@@ -125,8 +137,12 @@ public class Main {
                 brinquedos.add(brinquedo);
             }
 
+            /**
+             * livros.csv
+             * n
+             * <id;nome;custo;editora;ISBN>
+             */
             nomeArqIn = "livros.csv";
-            //<id;nome;custo;editora;ISBN>
             br = new BufferedReader(new FileReader(nomeArqIn));
             n = Integer.valueOf(br.readLine());
             for (int i=0; i<n; i++) {
@@ -141,8 +157,12 @@ public class Main {
                 livros.add(livro);
             }
 
+            /**
+             * presentes.csv
+             * n
+             * <id;nome;custo;fabricante>
+             */
             nomeArqIn = "presentes.csv";
-//            <id;nome;custo;fabricante>
             br = new BufferedReader(new FileReader(nomeArqIn));
             n = Integer.valueOf(br.readLine());
             for (int i=0; i<n; i++) {
@@ -156,8 +176,12 @@ public class Main {
                 presentes.add(presente);
             }
 
+            /**
+             * clientes.csv
+             * n
+             * <id;tipo;nome;cpf;endereço;telefone>
+             */
             nomeArqIn = "clientes.csv";
-//            <id;TIPO;nome;cpf;endereço;telefone>
             br = new BufferedReader(new FileReader(nomeArqIn));
             n = Integer.valueOf(br.readLine());
             for (int i=0; i<n; i++) {
@@ -178,8 +202,14 @@ public class Main {
                 clientes.add(cliente);
             }
 
+            /**
+             * compras.csv
+             * n
+             * <id_cliente;id_produto;tipo;quantidade>
+             *
+             * Tipo: 1) Brinquedo, 2) Livro, 3) Presente
+             */
             nomeArqIn = "compras.csv";
-//            <id_cliente;id_produto;TIPO;quantidade>
             br = new BufferedReader(new FileReader(nomeArqIn));
             n = Integer.valueOf(br.readLine());
             for (int i=0; i<n; i++) {
@@ -229,6 +259,18 @@ public class Main {
         } catch (IOException e) {
             System.out.println(e);
         }
+
+        /**
+         * 5.
+         * O sistema deve imprimir o relatório de compra em um arquivo chamado resultado.csv. Para o
+         * relatório de compra, o sistema deve apresentar a listagem com os quantitativos, produtos, valor bruto
+         * e valor com desconto para os itens de uma compra (de um cliente). Ao final da compra de cada cliente,
+         * devem sair na listagem o código do cliente e o valor final a ser pago.
+         *
+         * resultado.csv
+         * <id_cliente;valor_total_compra>
+         * < id_cliente;id_item;tipo;quantidade;custo;valor_com_desconto>
+         */
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter("resultado.csv"));
             out.write(geraRelatorioCompraCSV(clientes));
