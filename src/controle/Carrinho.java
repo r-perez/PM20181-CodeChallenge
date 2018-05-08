@@ -12,6 +12,7 @@ import java.util.List;
 public class Carrinho {
 
     private double valorTotal;
+    private double valorComDesconto;
     private double descontoLivro;
     private double descontoPresente;
     private double descontoBrinquedo;
@@ -31,28 +32,38 @@ public class Carrinho {
 
     public void adicionarProduto(Produto p) {
         if (p instanceof Presente) {
-            valorTotal += (p.getQuantidade() * p.getCusto()) * (1.15 - (descontoPresente / 100));
+            this.valorTotal += (p.getQuantidade() * p.getCusto()) * (1.15 - (this.descontoPresente / 100));
+            this.valorComDesconto = (p.getQuantidade() * p.getCusto()) * (1.15 - (this.descontoPresente / 100));
         } else if (p instanceof Brinquedo) {
-            valorTotal += (p.getQuantidade() * p.getCusto()) * (1 - (descontoBrinquedo / 100));
+            this.valorTotal += (p.getQuantidade() * p.getCusto()) * (1 - (this.descontoBrinquedo / 100));
+            this.valorComDesconto = (p.getQuantidade() * p.getCusto()) * (1 - (this.descontoBrinquedo / 100));
         } else if (p instanceof Livro) {
-            valorTotal += (p.getQuantidade() * p.getCusto()) * (1.05 - (descontoLivro / 100));
+            this.valorTotal += (p.getQuantidade() * p.getCusto()) * (1.05 - (this.descontoLivro / 100));
+            this.valorComDesconto = (p.getQuantidade() * p.getCusto()) * (1.05 - (this.descontoLivro / 100));
         }
-        produtos.add(p);
+        this.produtos.add(p);
     }
 
     public void removerProduto(Produto p) {
         if (p instanceof Presente) {
-            valorTotal -= (p.getQuantidade() * p.getCusto()) * (1.15 - (descontoPresente / 100));
+            this.valorTotal -= (p.getQuantidade() * p.getCusto()) * (1.15 - (this.descontoPresente / 100));
+            this.valorComDesconto = (p.getQuantidade() * p.getCusto()) * (1.15 - (this.descontoPresente / 100));
         } else if (p instanceof Brinquedo) {
-            valorTotal -= (p.getQuantidade() * p.getCusto()) * (1 - (descontoBrinquedo / 100));
+            this.valorTotal -= (p.getQuantidade() * p.getCusto()) * (1 - (this.descontoBrinquedo / 100));
+            this.valorComDesconto = (p.getQuantidade() * p.getCusto()) * (1 - (this.descontoBrinquedo / 100));
         } else if (p instanceof Livro) {
-            valorTotal -= (p.getQuantidade() * p.getCusto()) * (1.05 - (descontoLivro / 100));
+            this.valorTotal -= (p.getQuantidade() * p.getCusto()) * (1.05 - (this.descontoLivro / 100));
+            this.valorComDesconto = (p.getQuantidade() * p.getCusto()) * (1.05 - (this.descontoLivro / 100));
         }
-        produtos.remove(p);
+        this.produtos.remove(p);
     }
 
     public double getValorTotal() {
         return valorTotal;
+    }
+
+    public double getValorComDesconto() {
+        return valorComDesconto;
     }
 
     public double getDescontoLivro() {

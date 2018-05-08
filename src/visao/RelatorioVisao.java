@@ -38,9 +38,7 @@ public class RelatorioVisao extends AbstractVisao {
             relatorio += String.format("%2$d" + "%1$s" + "%3$.2f\n",
                     separador, cliente.getId(), carrinho.getValorTotal());
             for (Produto produto : carrinho.getProdutos()) {
-                //TODO calcular esse valorComDesconto
-                double valorComDesconto = 0.0d;
-                //TODO obter corretamente o idItem
+                double valorComDesconto = carrinho.getValorComDesconto();
                 long idItem = produto.getId();
                 relatorio += String.format("%2$d" + "%1$s" + "%3$d" + "%1$s" + "%4$d" +
                                 "%1$s" + "%5$d" + "%1$s" + "%6$.2f" + "%1$s" + "%7$.2f\n",
