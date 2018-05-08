@@ -103,10 +103,12 @@ public class Visao {
             relatorio += String.format("%2$d" + "%1$s" + "%3$.2f\n",
                     separador, cliente.getId(), carrinho.getValorTotal());
             for (Produto produto : carrinho.getProdutos()) {
+                //TODO calcular esse valorComDesconto
+                double valorComDesconto = 0.0d;
                 relatorio += String.format("%2$d" + "%1$s" + "%3$d" + "%1$s" + "%4$d" +
                                 "%1$s" + "%5$d" + "%1$s" + "%6$.2f" + "%1$s" + "%7$.2f\n",
                         separador, cliente.getId(), produto.getId(),
-                        produto.getTipo(), produto.getQuantidade(), produto.getCusto(), 0.0d);
+                        produto.getTipo(), produto.getQuantidade(), produto.getCusto(), valorComDesconto);
             }
         }
         return relatorio;
@@ -122,7 +124,6 @@ public class Visao {
         List<Produto> presentes = new ArrayList<>();
         List<Cliente> clientes = new ArrayList<>();
         //TODO aplicar padrao Chain of Responsability na leitura dos arquivos
-        //TODO aplicar Singleton na Main
 
         /**
          * 4.
