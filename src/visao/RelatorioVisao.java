@@ -11,8 +11,6 @@ import java.util.List;
 
 public class RelatorioVisao extends AbstractVisao {
 
-    private static final String PONTO_VIRGULA = ";";
-
     public RelatorioVisao(Nivel nivel) {
         this.nivel = nivel;
     }

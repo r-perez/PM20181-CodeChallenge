@@ -35,7 +35,7 @@ public class CompraVisao extends AbstractVisao {
             br = new BufferedReader(new FileReader(nomeArqIn));
             n = Integer.valueOf(br.readLine());
             for (int i=0; i<n; i++) {
-                String str[] = br.readLine().split(";");
+                String str[] = br.readLine().split(PONTO_VIRGULA);
                 int index = 0;
 
                 long idCliente = Long.valueOf(str[index++]);

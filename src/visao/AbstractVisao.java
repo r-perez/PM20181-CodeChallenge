@@ -13,6 +13,8 @@ public abstract class AbstractVisao {
     protected Nivel nivel;
     protected AbstractVisao proximo;
 
+    protected static final String PONTO_VIRGULA = ";";
+
     public void setProximo(AbstractVisao proximo) {
         this.proximo = proximo;
     }
