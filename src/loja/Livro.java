@@ -3,7 +3,7 @@ package loja;
 public class Livro extends Produto {
 	private String editora; // recebe o nome da editora
 	private String ISBN; // recebe o ISBN do livro
-    public static final int TIPO = 2; //
+    public static final int TIPO = 2; // define um tipo especifico para a subclasse Livro
 
     @Override
     public int getTipo() {
