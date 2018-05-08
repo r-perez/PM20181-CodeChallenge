@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>loja.Livro</OriginalElement>
+  <nodes>
+    <node x="523.25" y="780.0">visao.AbstractVisao</node>
+    <node x="515.5" y="0.0">usuario.Cliente</node>
+    <node x="188.0" y="632.0">loja.Livro</node>
+    <node x="681.0" y="250.0">usuario.ClientePremium</node>
+    <node x="359.0" y="632.0">loja.Brinquedo</node>
+    <node x="210.00000000000006" y="931.5">visao.ClienteVisao</node>
+    <node x="68.75" y="235.0">visao.Nivel</node>
+    <node x="300.0" y="250.0">usuario.ClienteNormal</node>
+    <node x="185.0" y="455.0">loja.Produto</node>
+    <node x="0.0" y="0.0">java.io.Serializable</node>
+    <node x="646.0" y="931.5">visao.LivroVisao</node>
+    <node x="838.0" y="931.5">visao.BrinquedoVisao</node>
+    <node x="0.0" y="1044.0">controle.Carrinho</node>
+    <node x="39.25" y="81.0">java.lang.Enum</node>
+    <node x="1063.0" y="931.5">visao.PresenteVisao</node>
+    <node x="413.00000000000006" y="919.0">visao.RelatorioVisao</node>
+    <node x="0.0" y="931.5">visao.CompraVisao</node>
+    <node x="134.0" y="0.0">java.lang.Comparable</node>
+    <node x="315.0" y="1044.0">visao.Main</node>
+    <node x="0.0" y="644.0">loja.Presente</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="visao.Nivel" target="java.lang.Enum">
+      <point x="0.0" y="-87.5" />
+      <point x="0.0" y="52.0" />
+    </edge>
+    <edge source="usuario.ClienteNormal" target="usuario.Cliente">
+      <point x="0.0" y="-27.5" />
+      <point x="480.5" y="225.0" />
+      <point x="594.5" y="225.0" />
+      <point x="-79.0" y="100.0" />
+    </edge>
+    <edge source="visao.RelatorioVisao" target="visao.AbstractVisao">
+      <point x="0.0" y="-40.0" />
+      <point x="519.5" y="899.0" />
+      <point x="608.6666666666667" y="899.0" />
+      <point x="-17.08333333333337" y="39.5" />
+    </edge>
+    <edge source="visao.CompraVisao" target="visao.AbstractVisao">
+      <point x="0.0" y="-27.5" />
+      <point x="95.0" y="879.0" />
+      <point x="540.3333333333335" y="879.0" />
+      <point x="-85.41666666666663" y="39.5" />
+    </edge>
+    <edge source="java.lang.Enum" target="java.lang.Comparable">
+      <point x="43.25" y="-52.0" />
+      <point x="169.0" y="56.0" />
+      <point x="194.5" y="56.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="loja.Presente" target="loja.Produto">
+      <point x="0.0" y="-39.5" />
+      <point x="84.0" y="607.0" />
+      <point x="211.16666666666666" y="607.0" />
+      <point x="-52.33333333333334" y="63.5" />
+    </edge>
+    <edge source="usuario.ClientePremium" target="usuario.Cliente">
+      <point x="0.0" y="-27.5" />
+      <point x="866.5" y="225.0" />
+      <point x="752.5" y="225.0" />
+      <point x="79.0" y="100.0" />
+    </edge>
+    <edge source="loja.Brinquedo" target="loja.Produto">
+      <point x="0.0" y="-51.5" />
+      <point x="443.0" y="607.0" />
+      <point x="315.83333333333337" y="607.0" />
+      <point x="52.33333333333337" y="63.5" />
+    </edge>
+    <edge source="java.lang.Enum" target="java.io.Serializable">
+      <point x="-43.25" y="-52.0" />
+      <point x="82.5" y="56.0" />
+      <point x="57.0" y="56.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="visao.PresenteVisao" target="visao.AbstractVisao">
+      <point x="0.0" y="-27.5" />
+      <point x="1160.5" y="879.0" />
+      <point x="711.1666666666667" y="879.0" />
+      <point x="85.41666666666663" y="39.5" />
+    </edge>
+    <edge source="visao.BrinquedoVisao" target="visao.AbstractVisao">
+      <point x="0.0" y="-27.5" />
+      <point x="940.5" y="889.0" />
+      <point x="677.0" y="889.0" />
+      <point x="51.25" y="39.5" />
+    </edge>
+    <edge source="loja.Livro" target="loja.Produto">
+      <point x="0.0" y="-51.5" />
+      <point x="0.0" y="63.5" />
+    </edge>
+    <edge source="visao.ClienteVisao" target="visao.AbstractVisao">
+      <point x="0.0" y="-27.5" />
+      <point x="301.50000000000006" y="889.0" />
+      <point x="574.5" y="889.0" />
+      <point x="-51.25" y="39.5" />
+    </edge>
+    <edge source="visao.LivroVisao" target="visao.AbstractVisao">
+      <point x="0.0" y="-27.5" />
+      <point x="732.0" y="899.0" />
+      <point x="642.8333333333335" y="899.0" />
+      <point x="17.08333333333337" y="39.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8939641109298532" x="434.5" y="452.05474452554745" />
+  <SelectedNodes>
+    <node>loja.Livro</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
