@@ -11,10 +11,10 @@ import loja.Produto;
 
 public class Carrinho {
 
-    private double valorTotal;
-    private double descontoLivro;
-    private double descontoPresente;
-    private double descontoBrinquedo;
+    private double valorTotal; //armazena valor bruto das compras 
+    private double descontoLivro; //recebe valor do descontro a ser aplicado no valor do do livro
+    private double descontoPresente; //recebe valor do descontro a ser aplicado no valor dopresente
+    private double descontoBrinquedo; //recebe valor do descontro a ser aplicado no valor do brinquedo
 
     protected List<Produto> produtos;
 
