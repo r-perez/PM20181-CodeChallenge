@@ -10,8 +10,7 @@ public class ClienteNormal extends Cliente {
 		
 		super(id, nome, cpf, endereco, telefone);
 		
-		// Cria um carrinho com os respectivos valores de desconto para cada tipo de produto
-		
+		// Cria um carrinho com os respectivos valores de desconto de cada tipo de produto para o Cliente Normal		
 		super.carrinho = new Carrinho(3, 2, 5);
 	}
 }
