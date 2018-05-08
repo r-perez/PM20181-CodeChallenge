@@ -2,10 +2,10 @@ package loja;
 
 public abstract class Produto {
 
-    protected long id;
-    protected String nome;
-    protected double custo;
-    protected int quantidade;
+    protected long id; // armazena o id do produto
+    protected String nome; // armazena o nome do produto
+    protected double custo; // armazena o custo do produto
+    protected int quantidade; // armazena a quantidade do produto
 
     /**
      * Retorna o tipo do Produto, atributo obrigatorio, variavel de instancia.
