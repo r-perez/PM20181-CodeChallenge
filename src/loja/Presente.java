@@ -1,8 +1,8 @@
 package loja;
 
 public class Presente extends Produto {
-    private String fabricante;
-    public static final int TIPO = 3;
+    private String fabricante; // recebe o nome do fabricante
+    public static final int TIPO = 3; // define um tipo especifico para a subclasse Produto
 
     @Override
     public int getTipo() {

@@ -1,10 +1,10 @@
 package loja;
 
 public class Brinquedo extends Produto {
-    private String fabricante;
-    private int idadeMinima;
+    private String fabricante; //recebe o nome do fabricante ou marca
+    private int idadeMinima; //recebe a idade minima para jogar
 
-    public static final int TIPO = 1;
+    public static final int TIPO = 1; // define um tipo especifico para a subclasse Brinquedo
 
     @Override
     public int getTipo() {

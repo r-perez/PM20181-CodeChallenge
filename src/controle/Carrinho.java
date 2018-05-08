@@ -11,12 +11,12 @@ import loja.Produto;
 
 public class Carrinho {
 
-    private double valorTotal;
-    private double descontoLivro;
-    private double descontoPresente;
-    private double descontoBrinquedo;
+    private double valorTotal; //armazena valor liquido da compra
+    private double descontoLivro; //recebe o valor do desconto a ser aplicado no valor dos livros
+    private double descontoPresente; //recebe o valor do desconto a ser aplicado no valor dos presentes
+    private double descontoBrinquedo; //recebe o valor do desconto a ser aplicado no valor dos brinquedos
 
-    protected List<Produto> produtos;
+    protected List<Produto> produtos; //recebe todos os produtos adicionados no carrinho
 
     private Carrinho() {
         this.produtos = new ArrayList<>();
@@ -29,6 +29,8 @@ public class Carrinho {
         this.descontoBrinquedo = descontoBrinquedo;
     }
 
+    // Esta funcao adiciona um produto no carrinho dependendo do tipo dele, aplicando os descontos e acrescimos devidos  
+    
     public void adicionarProduto(Produto p) {
         if (p instanceof Presente) {
             valorTotal += (p.getQuantidade() * p.getCusto()) * (1.15 - (descontoPresente / 100));
@@ -40,6 +42,8 @@ public class Carrinho {
         produtos.add(p);
     }
 
+    // Esta é o oposto da funcao de adiconarProduto  
+    
     public void removerProduto(Produto p) {
         if (p instanceof Presente) {
             valorTotal -= (p.getQuantidade() * p.getCusto()) * (1.15 - (descontoPresente / 100));
