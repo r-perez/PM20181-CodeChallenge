@@ -105,9 +105,11 @@ public class Visao {
             for (Produto produto : carrinho.getProdutos()) {
                 //TODO calcular esse valorComDesconto
                 double valorComDesconto = 0.0d;
+                //TODO obter corretamente o idItem
+                long idItem = produto.getId();
                 relatorio += String.format("%2$d" + "%1$s" + "%3$d" + "%1$s" + "%4$d" +
                                 "%1$s" + "%5$d" + "%1$s" + "%6$.2f" + "%1$s" + "%7$.2f\n",
-                        separador, cliente.getId(), produto.getId(),
+                        separador, cliente.getId(), idItem,
                         produto.getTipo(), produto.getQuantidade(), produto.getCusto(), valorComDesconto);
             }
         }
