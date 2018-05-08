@@ -3,12 +3,12 @@ package usuario;
 import controle.Carrinho;
 
 public abstract class Cliente {
-    protected long id;
-    protected String nome;
-    protected String cpf;
-    protected String endereco;
-    protected String telefone;
-    protected Carrinho carrinho;
+    protected long id; // armazena o id do cliente
+    protected String nome; // armazena o nome do cliente
+    protected String cpf; // armazena o cpf do cliente
+    protected String endereco; // armazena o endereco do cliente
+    protected String telefone; // armazena o telefne do cliente
+    protected Carrinho carrinho; // define um carrinho para o cliente
 
     public Cliente(long id, String nome, String cpf, String endereco, String telefone) {
         this.id = id;
